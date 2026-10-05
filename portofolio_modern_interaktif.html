@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Developer & Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar and animations */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.1);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0ea5e9;
+            border-radius: 4px;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300 font-sans antialiased selection:bg-sky-500 selection:text-white">
+
+    <header class="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 transition-colors">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="#hero" class="text-xl font-bold tracking-tight">
+                    <span class="text-sky-500">&lt;</span>Alex<span class="text-indigo-500">Dev</span><span class="text-sky-500">/&gt;</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8 font-medium text-sm">
+                    <a href="#tentang" class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors">Tentang</a>
+                    <a href="#keahlian" class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors">Keahlian</a>
+                    <a href="#proyek" class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors">Proyek</a>
+                    <a href="#pengalaman" class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors">Pengalaman</a>
+                    <a href="#kontak" class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors">Kontak</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <!-- Theme Toggle Button -->
+                    <button id="theme-toggle" aria-label="Toggle Theme" class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-sky-500 dark:hover:text-sky-400 transition-all transform hover:scale-105">
+                        <i id="theme-toggle-dark-icon" class="fas fa-moon hidden text-lg"></i>
+                        <i id="theme-toggle-light-icon" class="fas fa-sun text-lg"></i>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" aria-label="Open Menu" class="md:hidden p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:text-sky-500 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 pt-2 pb-6 space-y-3 font-medium">
+            <a href="#tentang" class="mobile-link block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Tentang</a>
+            <a href="#keahlian" class="mobile-link block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Keahlian</a>
+            <a href="#proyek" class="mobile-link block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Proyek</a>
+            <a href="#pengalaman" class="mobile-link block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Pengalaman</a>
+            <a href="#kontak" class="mobile-link block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Kontak</a>
+        </div>
+    </header>
+
+    <main class="pt-16">
+        <section id="hero" class="min-h-[calc(100vh-4rem)] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-sky-50/50 via-transparent to-transparent dark:from-sky-950/20">
+            <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
+                <!-- Text Content -->
+                <div class="flex-1 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-sky-100 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        Siap Menerima Proyek Baru
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
+                        Halo, Saya <br/>
+                        <span class="gradient-text">Alex Pratama</span>
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl font-medium text-slate-600 dark:text-slate-400">
+                        Full Stack Developer & UI/UX Designer
+                    </p>
+                    
+                    <p class="text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed text-sm sm:text-base">
+                        Berpengalaman dalam merancang dan membangun aplikasi web interaktif yang modern, bersih, cepat, dan berfokus pada pengalaman pengguna yang intuitif.
+                    </p>
+                    
+                    <!-- CTAs & Socials -->
+                    <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-2">
+                        <a href="#proyek" class="px-6 py-3 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-semibold shadow-lg shadow-sky-500/25 transition-all transform hover:-translate-y-0.5">
+                            Lihat Proyek <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                        <a href="#kontak" class="px-6 py-3 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold transition-all">
+                            Hubungi Saya
+                        </a>
+                    </div>
+
+                    <div class="flex items-center justify-center md:justify-start space-x-5 pt-4 text-slate-500 dark:text-slate-400">
+                        <a href="https://github.com" target="_blank" aria-label="GitHub" class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors text-xl">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors text-xl">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:alex@example.com" aria-label="Email" class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors text-xl">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Avatar Image Placeholder -->
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-full blur opacity-50 group-hover:opacity-80 transition duration-500"></div>
+                    <div class="relative w-56 h-56 sm:w-72 sm:h-72 rounded-full overflow-hidden border-4 border-white dark:border-slate-800 shadow-2xl">
+                        <img src="https://placehold.co/400x400/0ea5e9/ffffff?text=Alex+P" alt="Alex Pratama" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tentang" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-slate-200/60 dark:border-slate-800/60">
+            <div class="max-w-5xl mx-auto space-y-12">
+                <div class="text-center space-y-3">
+                    <h2 class="text-3xl font-bold tracking-tight">Tentang Saya</h2>
+                    <div class="w-16 h-1 bg-sky-500 mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <p>
+                            Saya adalah seorang web developer apasionat dengan pengalaman lebih dari 4 tahun dalam ekosistem pengembangan produk digital. Fokus utama saya adalah menciptakan solusi web berkode bersih dan berarsitektur efisien.
+                        </p>
+                        <p>
+                            Selalu antusias mempelajari teknologi baru serta menerapkan metodologi terbaik dalam desain interface, optimasi performa web, dan aksesibilitas pengguna.
+                        </p>
+                    </div>
+
+                    <!-- Statistics Cards -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-6 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-700/50 text-center shadow-sm">
+                            <p class="text-3xl font-extrabold text-sky-500 mb-1">4+</p>
+                            <p class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400">Tahun Pengalaman</p>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-700/50 text-center shadow-sm">
+                            <p class="text-3xl font-extrabold text-indigo-500 mb-1">35+</p>
+                            <p class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400">Proyek Selesai</p>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-700/50 text-center shadow-sm">
+                            <p class="text-3xl font-extrabold text-indigo-500 mb-1">20+</p>
+                            <p class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400">Klien Puas</p>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-700/50 text-center shadow-sm">
+                            <p class="text-3xl font-extrabold text-sky-500 mb-1">99%</p>
+                            <p class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400">Ketepatan Waktu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="keahlian" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-100/50 dark:bg-slate-800/30">
+            <div class="max-w-5xl mx-auto space-y-12">
+                <div class="text-center space-y-3">
+                    <h2 class="text-3xl font-bold tracking-tight">Keahlian & Teknologi</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm">Alat dan bahasa pemrograman yang biasa saya gunakan</p>
+                    <div class="w-16 h-1 bg-sky-500 mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Skill Item 1 -->
+                    <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/60 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="p-3 rounded-xl bg-orange-100 dark:bg-orange-950/50 text-orange-600">
+                                <i class="fab fa-html5 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-base">HTML5 & CSS3</h3>
+                                <p class="text-xs text-slate-500">Semantik & Modern Responsive</p>
+                            </div>
+                        </div>
+                        <div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+                            <div class="bg-orange-500 h-full rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Item 2 -->
+                    <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/60 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="p-3 rounded-xl bg-yellow-100 dark:bg-yellow-950/50 text-yellow-600">
+                                <i class="fab fa-js text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-base">JavaScript (ES6+)</h3>
+                                <p class="text-xs text-slate-500">Logic & Interactive UI</p>
+                            </div>
+                        </div>
+                        <div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+                            <div class="bg-yellow-500 h-full rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Item 3 -->
+                    <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/60 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="p-3 rounded-xl bg-sky-100 dark:bg-sky-950/50 text-sky-500">
+                                <i class="fab fa-react text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-base">React.js & Next.js</h3>
+                                <p class="text-xs text-slate-500">Frontend Framework</p>
+                            </div>
+                        </div>
+                        <div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+                            <div class="bg-sky-500 h-full rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Item 4 -->
+                    <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/60 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="p-3 rounded-xl bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600">
+                                <i class="fab fa-node-js text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-base">Node.js & Express</h3>
+                                <p class="text-xs text-slate-500">Backend & REST API</p>
+                            </div>
+                        </div>
+                        <div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+                            <div class="bg-emerald-500 h-full rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Item 5 -->
+                    <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/60 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="p-3 rounded-xl bg-teal-100 dark:bg-teal-950/50 text-teal-600">
+                                <i class="fas fa-wind text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-base">Tailwind CSS</h3>
+                                <p class="text-xs text-slate-500">Utility-First CSS</p>
+                            </div>
+                        </div>
+                        <div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+                            <div class="bg-teal-500 h-full rounded-full" style="width: 92%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Item 6 -->
+                    <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/60 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="p-3 rounded-xl bg-purple-100 dark:bg-purple-950/50 text-purple-600">
+                                <i class="fas fa-pen-nib text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-base">UI/UX Design</h3>
+                                <p class="text-xs text-slate-500">Figma & Prototyping</p>
+                            </div>
+                        </div>
+                        <div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+                            <div class="bg-purple-500 h-full rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyek" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-slate-200/60 dark:border-slate-800/60">
+            <div class="max-w-5xl mx-auto space-y-10">
+                <div class="text-center space-y-3">
+                    <h2 class="text-3xl font-bold tracking-tight">Proyek Terbaru</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm">Beberapa hasil karya pengembangan dan desain yang telah saya kerjakan</p>
+                    <div class="w-16 h-1 bg-sky-500 mx-auto rounded-full"></div>
+                </div>
+
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-4 font-medium text-sm">
+                    <button class="filter-btn active px-4 py-2 rounded-xl bg-sky-500 text-white transition-all" data-filter="all">Semua</button>
+                    <button class="filter-btn px-4 py-2 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition-all" data-filter="web">Web Dev</button>
+                    <button class="filter-btn px-4 py-2 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition-all" data-filter="uiux">UI/UX Design</button>
+                    <button class="filter-btn px-4 py-2 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition-all" data-filter="mobile">Mobile App</button>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Project 1 -->
+                    <div class="project-card group rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/60 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="web">
+                        <div class="relative overflow-hidden aspect-video">
+                            <img src="https://placehold.co/600x400/0ea5e9/ffffff?text=E-Commerce+Platform" alt="Project 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                            <div class="space-y-2">
+                                <h3 class="font-bold text-lg group-hover:text-sky-500 transition-colors">Platform E-Commerce Modern</h3>
+                                <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                                    Aplikasi toko online lengkap dengan keranjang belanja, manajemen stok, dan integrasi payment gateway.
+                                </p>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex flex-wrap gap-1.5 text-xs font-medium">
+                                    <span class="px-2.5 py-1 rounded-md bg-sky-100 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400">React</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-sky-100 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400">Tailwind</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-sky-100 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400">Node.js</span>
+                                </div>
+                                <div class="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-700/50 text-sm">
+                                    <a href="#" class="text-sky-500 hover:text-sky-600 font-semibold inline-flex items-center gap-1">Live Demo <i class="fas fa-external-link-alt text-xs"></i></a>
+                                    <a href="#" class="text-slate-500 hover:text-slate-800 dark:hover:text-slate-200"><i class="fab fa-github text-base"></i> Code</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card group rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/60 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="uiux">
+                        <div class="relative overflow-hidden aspect-video">
+                            <img src="https://placehold.co/600x400/6366f1/ffffff?text=Finance+App+UI" alt="Project 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                            <div class="space-y-2">
+                                <h3 class="font-bold text-lg group-hover:text-sky-500 transition-colors">Redesain Aplikasi Keuangan</h3>
+                                <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                                    Rancangan antarmuka pengguna intuitive untuk aplikasi pengelolaan keuangan pribadi dan analisis grafik.
+                                </p>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex flex-wrap gap-1.5 text-xs font-medium">
+                                    <span class="px-2.5 py-1 rounded-md bg-indigo-100 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400">Figma</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-indigo-100 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400">UI/UX</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-indigo-100 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400">Prototype</span>
+                                </div>
+                                <div class="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-700/50 text-sm">
+                                    <a href="#" class="text-sky-500 hover:text-sky-600 font-semibold inline-flex items-center gap-1">Figma Prototype <i class="fas fa-external-link-alt text-xs"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card group rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/60 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="mobile">
+                        <div class="relative overflow-hidden aspect-video">
+                            <img src="https://placehold.co/600x400/10b981/ffffff?text=Fitness+Tracker" alt="Project 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                            <div class="space-y-2">
+                                <h3 class="font-bold text-lg group-hover:text-sky-500 transition-colors">Aplikasi Kebugaran Mobile</h3>
+                                <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                                    Aplikasi pemantau aktivitas harian, jumlah langkah, kalkulator kalori, dan jadwal latihan.
+                                </p>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex flex-wrap gap-1.5 text-xs font-medium">
+                                    <span class="px-2.5 py-1 rounded-md bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400">React Native</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400">Firebase</span>
+                                </div>
+                                <div class="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-700/50 text-sm">
+                                    <a href="#" class="text-sky-500 hover:text-sky-600 font-semibold inline-flex items-center gap-1">App Store <i class="fas fa-external-link-alt text-xs"></i></a>
+                                    <a href="#" class="text-slate-500 hover:text-slate-800 dark:hover:text-slate-200"><i class="fab fa-github text-base"></i> Code</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card group rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/60 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="web">
+                        <div class="relative overflow-hidden aspect-video">
+                            <img src="https://placehold.co/600x400/8b5cf6/ffffff?text=Dashboard+Analytics" alt="Project 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                            <div class="space-y-2">
+                                <h3 class="font-bold text-lg group-hover:text-sky-500 transition-colors">Dashboard Analitik SaaS</h3>
+                                <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                                    Dashboard bisnis interaktif untuk menampilkan visualisasi data real-time dan performa penjualan.
+                                </p>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex flex-wrap gap-1.5 text-xs font-medium">
+                                    <span class="px-2.5 py-1 rounded-md bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400">Next.js</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400">Chart.js</span>
+                                </div>
+                                <div class="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-700/50 text-sm">
+                                    <a href="#" class="text-sky-500 hover:text-sky-600 font-semibold inline-flex items-center gap-1">Live Demo <i class="fas fa-external-link-alt text-xs"></i></a>
+                                    <a href="#" class="text-slate-500 hover:text-slate-800 dark:hover:text-slate-200"><i class="fab fa-github text-base"></i> Code</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pengalaman" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-100/50 dark:bg-slate-800/30">
+            <div class="max-w-4xl mx-auto space-y-12">
+                <div class="text-center space-y-3">
+                    <h2 class="text-3xl font-bold tracking-tight">Pengalaman & Pendidikan</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm">Perjalanan karir profesional dan latar belakang pendidikan saya</p>
+                    <div class="w-16 h-1 bg-sky-500 mx-auto rounded-full"></div>
+                </div>
+
+                <!-- Vertical Timeline -->
+                <div class="relative border-l-2 border-sky-500/30 ml-4 sm:ml-32 space-y-10">
+                    <!-- Timeline Item 1 -->
+                    <div class="relative pl-6 sm:pl-8 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-sky-500 border-4 border-white dark:border-slate-900"></div>
+                        <span class="sm:absolute sm:-left-36 sm:top-1 sm:text-right w-28 text-xs font-bold text-sky-500 dark:text-sky-400 uppercase tracking-wider block mb-1 sm:mb-0">
+                            2022 - Sekarang
+                        </span>
+                        <div class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200/80 dark:border-slate-700/60 shadow-sm">
+                            <h3 class="text-lg font-bold">Senior Web Developer</h3>
+                            <p class="text-xs text-slate-500 font-medium mb-3">PT Teknologi Solusi Digital</p>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                Memimpin tim pengembang dalam merancang aplikasi enterprise berbasis cloud. Bertanggung jawab atas performa frontend dan arsitektur komponen.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="relative pl-6 sm:pl-8 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-sky-500 border-4 border-white dark:border-slate-900"></div>
+                        <span class="sm:absolute sm:-left-36 sm:top-1 sm:text-right w-28 text-xs font-bold text-sky-500 dark:text-sky-400 uppercase tracking-wider block mb-1 sm:mb-0">
+                            2020 - 2022
+                        </span>
+                        <div class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200/80 dark:border-slate-700/60 shadow-sm">
+                            <h3 class="text-lg font-bold">Frontend Developer</h3>
+                            <p class="text-xs text-slate-500 font-medium mb-3">Creative Studio Agency</p>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                Mengembangkan website klien yang responsif dan interaktif menggunakan React dan Tailwind CSS.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3 -->
+                    <div class="relative pl-6 sm:pl-8 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-sky-500 border-4 border-white dark:border-slate-900"></div>
+                        <span class="sm:absolute sm:-left-36 sm:top-1 sm:text-right w-28 text-xs font-bold text-sky-500 dark:text-sky-400 uppercase tracking-wider block mb-1 sm:mb-0">
+                            2016 - 2020
+                        </span>
+                        <div class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200/80 dark:border-slate-700/60 shadow-sm">
+                            <h3 class="text-lg font-bold">S1 Teknik Informatika</h3>
+                            <p class="text-xs text-slate-500 font-medium mb-3">Universitas Indonesia</p>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                Lulus dengan predikat Cumlaude. Aktif dalam organisasi riset rekayasa perangkat lunak.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="kontak" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-slate-200/60 dark:border-slate-800/60">
+            <div class="max-w-5xl mx-auto space-y-12">
+                <div class="text-center space-y-3">
+                    <h2 class="text-3xl font-bold tracking-tight">Hubungi Saya</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm">Punya pertanyaan atau ingin bekerja sama? Kirimkan pesan!</p>
+                    <div class="w-16 h-1 bg-sky-500 mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Info Contact Cards -->
+                    <div class="space-y-4">
+                        <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/60 flex items-start space-x-4">
+                            <div class="p-3 rounded-xl bg-sky-100 dark:bg-sky-950/50 text-sky-500">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-sm">Email</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">alex.pratama@example.com</p>
+                            </div>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/60 flex items-start space-x-4">
+                            <div class="p-3 rounded-xl bg-indigo-100 dark:bg-indigo-950/50 text-indigo-500">
+                                <i class="fas fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-sm">Telepon / WhatsApp</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">+62 812-3456-7890</p>
+                            </div>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/60 flex items-start space-x-4">
+                            <div class="p-3 rounded-xl bg-emerald-100 dark:bg-emerald-950/50 text-emerald-500">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-sm">Lokasi</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Jakarta, Indonesia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="lg:col-span-2 bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-2xl border border-slate-200/80 dark:border-slate-700/60 shadow-sm">
+                        <!-- Message Box Alert -->
+                        <div id="contact-alert" class="hidden mb-6 p-4 rounded-xl text-sm font-medium"></div>
+
+                        <form id="contact-form" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="space-y-1">
+                                    <label for="nama" class="block text-xs font-semibold text-slate-600 dark:text-slate-400">Nama Lengkap</label>
+                                    <input type="text" id="nama" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 text-sm">
+                                </div>
+                                <div class="space-y-1">
+                                    <label for="email" class="block text-xs font-semibold text-slate-600 dark:text-slate-400">Email Anda</label>
+                                    <input type="email" id="email" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 text-sm">
+                                </div>
+                            </div>
+
+                            <div class="space-y-1">
+                                <label for="subjek" class="block text-xs font-semibold text-slate-600 dark:text-slate-400">Subjek</label>
+                                <input type="text" id="subjek" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 text-sm">
+                            </div>
+
+                            <div class="space-y-1">
+                                <label for="pesan" class="block text-xs font-semibold text-slate-600 dark:text-slate-400">Pesan</label>
+                                <textarea id="pesan" rows="4" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 text-sm resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-3 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-semibold text-sm shadow-md transition-all">
+                                Kirim Pesan
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-8 px-4 text-center">
+        <div class="max-w-5xl mx-auto space-y-4">
+            <p class="text-xs text-slate-500 dark:text-slate-400">
+                &copy; 2026 Alex Pratama. Dibuat dengan <i class="fas fa-heart text-red-500"></i> dan Tailwind CSS.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Dark/Light Theme Toggle with localStorage Support
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+        function initTheme() {
+            if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                lightIcon.classList.remove('hidden');
+                darkIcon.classList.add('hidden');
+            } else {
+                document.documentElement.classList.remove('dark');
+                darkIcon.classList.remove('hidden');
+                lightIcon.classList.add('hidden');
+            }
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+                darkIcon.classList.remove('hidden');
+                lightIcon.classList.add('hidden');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+                lightIcon.classList.remove('hidden');
+                darkIcon.classList.add('hidden');
+            }
+        });
+
+        initTheme();
+
+        // 2. Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 3. Project Filter Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button state
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-sky-500', 'text-white');
+                    b.classList.add('bg-slate-200', 'dark:bg-slate-800');
+                });
+                btn.classList.remove('bg-slate-200', 'dark:bg-slate-800');
+                btn.classList.add('bg-sky-500', 'text-white');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // 4. Form Submit Simulation
+        const contactForm = document.getElementById('contact-form');
+        const alertBox = document.getElementById('contact-alert');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Display Success Alert
+            alertBox.className = "mb-6 p-4 rounded-xl text-sm font-medium bg-emerald-100 text-emerald-800 border border-emerald-300 dark:bg-emerald-950/60 dark:text-emerald-300 dark:border-emerald-800";
+            alertBox.innerHTML = "<i class='fas fa-check-circle mr-2'></i> Terima kasih! Pesan Anda berhasil terkirim.";
+            alertBox.classList.remove('hidden');
+
+            // Reset Form Fields
+            contactForm.reset();
+
+            // Hide alert after 5 seconds
+            setTimeout(() => {
+                alertBox.classList.add('hidden');
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
